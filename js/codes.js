@@ -1,15 +1,15 @@
-//Selectores
+//Variables que contienen los elementos del DOM (seleccionados por su id)
 const input = document.querySelector("#input-texto");
 const btnEncriptador = document.querySelector("#btn-encriptar");
 const btnDesencriptar = document.querySelector("#btn-desencriptar");
 const mensaje = document.querySelector("#mensaje");
 const btnCopiar = document.querySelector("#btn-copiar");
 
-//captura el id y esconde la div-aparece da de la pantalla
+//Captura el id y esconde la div-aparece da de la pantalla
 document.getElementById("div-aparece").style.display = 'none';
 inputverificar();
 
-//caputura el id en el momento del click y direcciona el programa para el método que encripta el texto
+//Caputura el id en el momento del click y direcciona el programa para el método que encripta el texto
 document.getElementById('btn-encriptar').onclick = (e) => {
   e.preventDefault();
   const textoEncriptado = encriptar(input.value.toLowerCase());
@@ -18,7 +18,7 @@ document.getElementById('btn-encriptar').onclick = (e) => {
   aparece()
 }
 
-//caputura el id en el momento del click y direcciona el programa para el método que desencripta el texto
+//Caputura el id en el momento del click y direcciona el programa para el método que desencripta el texto
 document.getElementById('btn-desencriptar').onclick = (e) => {
   e.preventDefault();
   const textoDesencriptado = desencriptar(input.value);
@@ -27,7 +27,7 @@ document.getElementById('btn-desencriptar').onclick = (e) => {
   aparece()
 }
 
-//caputura el id en el momento del click y hace la validación que copia el texto
+//Captura el id en el momento del click y hace la validación que copia el texto
 document.getElementById('btn-copiar').onclick = (e) => {
   e.preventDefault();
   const mensaje = document.querySelector("#mensaje");
@@ -36,7 +36,7 @@ document.getElementById('btn-copiar').onclick = (e) => {
   mensaje.value = "";
 }
 
-//encripta el texto
+//Encriptacion del texto
 function encriptar(stringEncriptada) {
   let matrixCode = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]]
   stringEncriptada = stringEncriptada.toLowerCase()
@@ -48,7 +48,7 @@ function encriptar(stringEncriptada) {
   return stringEncriptada
 }
 
-//desencripta el texto
+//Desencriptador del texto
 function desencriptar(stringDesencriptada) {
   let matrixCode = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]]
   stringDesencriptada = stringDesencriptada.toLowerCase()
@@ -60,13 +60,13 @@ function desencriptar(stringDesencriptada) {
   return stringDesencriptada
 }
 
-//manipula el dom para que algunos componentes aparezcan y desaparezcan de la pantalla
+//Manipulacion del DOM para que algunos componentes aparezcan y desaparezcan de la pantalla
 function aparece() {
   document.getElementById("div-desaparece").style.display = 'none';
   document.getElementById("div-aparece").style.display = 'block';
 }
 
-//manipula el dom para que algunos componentes aparezcan y desaparezcan de la pantalla
+//Manipulacion del DOM para que algunos componentes aparezcan y desaparezcan de la pantalla
 function home() {
   document.getElementById("div-aparece").style.display = 'none';
   document.getElementById("div-desaparece").style.display = 'block';
